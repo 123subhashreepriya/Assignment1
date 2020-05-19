@@ -5,7 +5,7 @@ public class Question1
 
 		public static void main(String[] args) {
 
-		//inserting node in binary tree
+		
 		Node root = new Node(8);
 		addNode(root,3);
 		addNode(root,10);
@@ -16,9 +16,7 @@ public class Question1
 		addNode(root,13);
 		addNode(root,4);
 
-		//traverseTreeInOrder(root);
-
-		//Traverse Leaves from right To Left
+	
 		traverseLeaves(root);
 
 		}
