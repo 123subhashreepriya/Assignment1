@@ -1,0 +1,96 @@
+
+public class Assignment2
+{
+		static boolean flag = false;
+
+		public static void main(String[] args) {
+
+		//inserting node in binary tree
+		Node root = new Node(8);
+		addNode(root,3);
+		addNode(root,10);
+		addNode(root,1);
+		addNode(root,6);
+		addNode(root,14);
+		addNode(root,7);
+		addNode(root,13);
+		addNode(root,4);
+
+		//traverseTreeInOrder(root);
+
+		//Traverse Leaves from right To Left
+		traverseLeaves(root);
+
+		}
+
+		private static void traverseLeaves(Node root) {
+
+		if(root == null){
+		return;
+		} else if(root != null && root.right==null && root.left == null){
+		if(flag){
+		System.out.print(" -> ");
+		}
+		flag = true;
+		}
+		if (root.right==null && root.left == null){
+		System.out.print(root.data);
+		}
+		if(root.right != null){
+		traverseLeaves(root.right);
+		}
+		if(root.left != null){
+		traverseLeaves(root.left);
+		}
+
+		}
+
+		private static void traverseTreeInOrder(Node root) {
+		if(root==null){
+		return;
+		}
+		traverseTreeInOrder(root.left);
+		System.out.println(root.data);
+		traverseTreeInOrder(root.right);
+
+		}
+
+		private static void addNode(Node root, int i) {
+		root = addNodeRec(root,i);
+		}
+
+		private static Node addNodeRec(Node root, int i) {
+		if(root == null){
+		root = new Node(i);
+		return root;
+		}
+
+		if(i<=root.data){
+		root.left = addNodeRec(root.left,i);
+		} else {
+		root.right =  addNodeRec(root.right,i);
+		}
+
+		return root;
+		}
+
+
+
+		static class Node {
+		int data;
+		Node left;
+		Node right;
+
+		public Node (int data){
+		this.data=data;
+		left=null;
+		right=null;
+		}
+		}
+
+
+
+		}
+
+
+
