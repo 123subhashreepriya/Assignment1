@@ -2,12 +2,11 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Assignment1
+public class Assignment3
 {
 
 public static void main(String[] args) {
 
-//inserting node in binary tree
 Node root = new Node(1);
 root.right= new Node(2);
 root.right.right = new Node(5);
